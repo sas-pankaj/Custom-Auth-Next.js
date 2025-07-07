@@ -3,8 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const user = await request.json();
-  const isValidUser: { email: string; password: string } | undefined =
-    await validateUser(user);
+  const isValidUser: { email: string; password: string } | undefined = await validateUser(user);
 
   if (!isValidUser) {
     return NextResponse.json(

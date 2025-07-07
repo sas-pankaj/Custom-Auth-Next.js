@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs";
 import prisma from "./prisma";
+import bcrypt from "bcryptjs";
 
 type Iuser = {
   Id?: string;
@@ -22,7 +23,7 @@ export async function saveUsers(user: Iuser) {
   await prisma.authUsers.create({
     data: {
       email: user.email,
-      password: user.password,
+      password: await bcrypt.hash(user.password, 10) ,
     },
   });
 }

@@ -76,7 +76,7 @@ export default function AuthForm() {
           </div>
         </div>
         <div className="w-full">
-          <button type="submit" className="w-full border-2 rounded-2xl">
+          <button type="submit" className="w-full border-2 rounded-2xl cursor-pointer">
             {isLogin ? "Login" : "Sign Up"}
           </button>
         </div>
